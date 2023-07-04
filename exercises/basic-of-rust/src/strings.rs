@@ -1,23 +1,23 @@
 // Exercise 1
 #[allow(dead_code)]
 fn exercise1(color: &str) -> String {
-    todo!()
+    color.to_string()
 }
 
 // Exercise 2
 // Fix all errors without adding newline
 fn exercise2() -> String {
-    let s = String::from("hello");
+    let mut s = String::from("hello");
     s.push(',');
-    s.push(" world");
-    s += "!".to_string();
+    s += " world";
+    s += "!";
     s
 }
 // Exercise 3
 // Fix errors without removing any line
 fn exercise3() -> String {
     let s1 = String::from("hello,");
-    let s2 = String::from("world!");
+    let s2: &str = " world!";
     let s3 = s1 + s2;
     s3
 }
