@@ -76,9 +76,6 @@ fn is_prime(n: u32) -> bool {
     check
 }
 
-fn main(){
-    println!("{}", is_prime(1))
-}
 // Don't mind this for now :)
 #[cfg(test)]
 mod tests {
