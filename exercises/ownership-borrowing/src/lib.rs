@@ -18,8 +18,7 @@ fn exercise2() {
 }
 // Only modify the code below!
 fn take_ownership(s: String) -> String {
-    let new_str = s;
-    new_str
+    s
 }
 
 // Exercise 3
