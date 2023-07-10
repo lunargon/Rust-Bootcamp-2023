@@ -111,7 +111,7 @@ fn exercise7() {
 // Make it compile
 
 fn exercise8() {
-    let mut accounting = vec!["Alice", "Ben"];
+    let mut accounting: Vec<String> = vec!["Alice".to_string(), "Ben".to_string()];
 
     loop {
         let mut add_input = String::new();
@@ -120,7 +120,7 @@ fn exercise8() {
             .read_line(&mut add_input)
             .expect("Failed to read line");
 
-        let add_vec: Vec<&str> = str.trim().split_whitespace().collect();
+        let add_vec: Vec<&str> = add_input.trim().split_whitespace().collect();
 
         if add_vec.is_empty() {
             println!("Incorrect input, try again");
@@ -128,6 +128,6 @@ fn exercise8() {
         }
 
         let person = add_vec[0];
-        accounting.push(person);
+        accounting.push(person.to_string());
     }
 }
