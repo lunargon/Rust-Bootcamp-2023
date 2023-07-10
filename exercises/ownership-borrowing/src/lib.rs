@@ -31,17 +31,18 @@ fn exercise3() {
         4695.71, 71.11, 2391.48, 331.29, 1214.69, 863.52, 7810.01,
     ];
 
-    let values_number = values.len();
+    let _values_number = values.len();
 
-    let additions: Vec<usize> = vec![0];
+    let additions_vec: Vec<usize> = vec![0];
+    let _value_add = additions_vec.len();
 
-    println!("{:?}", values_number);
+    // println!("{:?}", values_number);
 
-    while additions.len() > 0 {
+    while _value_add > 0 {
         let mut addition: f64 = 0.0;
 
-        // Sumar valores en additions
-        for element_index in additions {
+        // // Sumar valores en additions
+        for element_index in 0.._value_add {
             let addition_aux = values[element_index];
             addition = addition_aux + addition;
         }
@@ -50,10 +51,10 @@ fn exercise3() {
 
 // Exercise 4
 // Make it compile
-fn exercise4(value: u32) -> &'static str {
+fn exercise4(value: u32) -> String {
     let str_value = value.to_string(); // Convert u32 to String
     let str_ref: &str = &str_value; // Obtain a reference to the String
-    str_ref // Return the reference to the String
+    str_ref.to_string() // Return the reference to the String
 }
 
 // Exercise 5
