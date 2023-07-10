@@ -100,8 +100,8 @@ fn exercise6() {
 fn exercise7() {
     let mut v: Vec<&str> = Vec::new();
     {
-        let chars = [b'x', b'y', b'z'];
-        let s: &str = std::str::from_utf8(&chars).unwrap();
+        const CHARS: [u8; 3] = [b'x', b'y', b'z'];
+        let s: &str = std::str::from_utf8(&CHARS).unwrap();
         v.push(&s);
     }
     println!("{:?}", v);
