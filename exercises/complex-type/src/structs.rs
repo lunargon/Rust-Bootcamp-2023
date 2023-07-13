@@ -2,6 +2,7 @@
 // Fix the error
 // Make it compile
 // Run test
+#[derive(Eq, PartialEq, Debug)]
 struct Person {
     name: String,
     age: u8,
@@ -39,12 +40,12 @@ impl Agent {
 
     // Get the name of the person
     fn get_name(&self) -> &str {
-        todo!()
+        self.name.as_str()
     }
 
     // Get the age of the person
     fn get_age(&self) -> u32 {
-        todo!()
+        self.age
     }
 }
 
@@ -68,7 +69,7 @@ impl Calculator {
     fn subtract(mut self, num: i32) {
         self.value -= num;
     }
-    fn clear(self) {
+    fn clear(&self) {
         self.value = 0;
     }
 
