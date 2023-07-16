@@ -74,12 +74,8 @@ fn find_max<T: PartialOrd>(collection: &[T]) -> Option<&T> {
 // Reverse the elements in a collection
 // Make it compile 
 // Run tests 
-fn reverse_collection<T>(collection: &[T]) -> Vec<&T>{
-    let mut reversed: Vec<&T> = Vec::with_capacity(collection.len());
-    for item in collection.iter().rev() {
-        reversed.push(item);
-    }
-    reversed
+fn reverse_collection<T>(collection: &mut [T]){
+    collection.reverse()
 }
 
 
