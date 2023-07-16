@@ -1,3 +1,5 @@
+use std::clone;
+
 // Exercise 1 
 // Implement struct Point to make it work.
 // Make it compile
@@ -53,23 +55,43 @@ fn exercise3() {
 // Implementing logic
 // Run tests
 
-fn find_max<T>(collection: &[T]) -> Option<&T> {
-    todo!()
+fn find_max<T: PartialOrd>(collection: &[T]) -> Option<&T> {
+    if collection.is_empty() {
+        return None;
+    }
+
+    let mut max = &collection[0];
+    for ele in collection {
+        if ele > max {
+            max = ele;
+        }
+    }
+
+    Some(max)
 }
 
 // Exercise 5 
 // Reverse the elements in a collection
 // Make it compile 
 // Run tests 
-fn reverse_collection<T>(collection: &[T]) {
-    todo!()
+fn reverse_collection<T>(collection: &[T]) -> Vec<&T>{
+    let mut reversed: Vec<&T> = Vec::with_capacity(collection.len());
+    for item in collection.iter().rev() {
+        reversed.push(item);
+    }
+    reversed
 }
 
 
 // Exercise 6
 // Function to check if a collection contains a specific value
-fn contains_value<T>(collection: &[T], value: &T) -> bool {
-    todo!()
+fn contains_value<T: PartialEq>(collection: &[T], value: &T) -> bool {
+    for item in collection {
+        if item == value {
+            return true;
+        }
+    }
+    false
 }
 
 // Unit tests
